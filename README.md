@@ -1,2 +1,1 @@
-# alx-system_engineering-devops
-Shell navigation and permissions project for ALX Software Engineering Bootcamp
+Project to practice the shell scripts and permissions.

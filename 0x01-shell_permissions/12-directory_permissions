@@ -1,0 +1,2 @@
+#!/bin/bash
+mdkir -m 751 my_dir

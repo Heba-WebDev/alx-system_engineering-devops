@@ -1,1 +1,1 @@
-Few shell commands to practice.
+Different scripts to execute some shell commands. 

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+count=0
+
+while [ $count -lt 20 ]
+do
+  if [ $count -eq 4 ]
+  then
+    echo "bad luck from China"
+  elif [ $count -eq 9 ]
+  then
+    echo "bad luck from Japan"
+  elif [ $count -eq 17 ]
+  then
+    echo "bad luck from Italy"
+  fi
+  (( count++ ))
+done

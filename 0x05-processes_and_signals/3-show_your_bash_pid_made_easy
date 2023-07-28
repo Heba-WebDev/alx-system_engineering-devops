@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # displays the PID, along with the process name
-ps -eo pid,comm | grep bash
+top -b -n 1 | grep bash

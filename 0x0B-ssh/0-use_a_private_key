@@ -1,5 +1,9 @@
 #!/usr/bin/bash
-# A script that uses ssh to connect to a server
+# This script connects to the server using SSH with a private key.
 
-ssh-copy-id -i ~/.ssh/school ubuntu@52.3.244.51
-ssh ubuntu@52.3.244.51
+# Specify the server IP address and the username
+SERVER_IP="52.3.244.51"
+USERNAME="ubuntu"
+
+# Use SSH with the private key
+ssh -i ~/.ssh/school "$USERNAME@$SERVER_IP"

@@ -1,4 +1,5 @@
 #!/usr/bin/bash
 # A script that uses ssh to connect to a server
 
-ssh -i ~/.ssh/school ubuntu@52.3.244.51
+ssh-copy-id -i ~/.ssh/school ubuntu@52.3.244.51
+ssh ubuntu@52.3.244.51

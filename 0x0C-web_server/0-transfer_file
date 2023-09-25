@@ -13,4 +13,4 @@ username=$3
 ssh_key=$4
 
 # scp (secure copy) transfer the file and -o disable strict host key checking
-scp -o "strictHostKeyChecking=no" -i "$ssh_key" "$path" "$username@$ip:~/"
+scp -o "StrictHostKeyChecking=no" -i "$ssh_key" "$path" "$username@$ip:~/"

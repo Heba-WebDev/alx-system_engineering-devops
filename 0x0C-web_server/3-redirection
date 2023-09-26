@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Configures Nginx server so that /redirect_me is redirecting to another page
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" | sudo tee /var/www/html/index.html
+str_to_replace="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/Heba-WebDev permanent;"
+sudo sed -i "s/server_name _;/$str_to_replace/" /etc/nginx/sites-enabled/default"
+sudo service nginx restart

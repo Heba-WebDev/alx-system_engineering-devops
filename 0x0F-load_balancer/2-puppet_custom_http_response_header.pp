@@ -37,7 +37,7 @@ file { '/etc/nginx/sites-available/default':
       index index.html index.htm;
 
       location /redirect_me {
-        return 301 https//youtube.com/;
+        return 301 https//github.com/heba-webdev;
       }
 
       error_page 404 /404.html;

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Fixing Ubuntu container’s Nginx to listen on port 80
+sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+sudo services nginx restart
+echo "" | sudo dd status=none of=/run/nginx.pid

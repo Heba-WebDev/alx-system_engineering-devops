@@ -1,0 +1,34 @@
+global
+    daemon
+    maxconn 256
+
+defaults
+    mode http
+    timeout connect 5000ms
+    timeout client 50000ms
+    timeout server 50000ms
+
+frontend http_front
+    bind *:80
+    http-request redirect scheme https if !{ ssl_fc }
+    #default_backend http_back
+
+backend http_back
+    balance roundrobin
+    server web-01 35.175.135.229:80 check
+    server web-02 54.172.174.81:80 check
+
+frontend https_front
+    bind *:443 ssl crt /etc/letsencrypt/live/www.heba-dev.tech/www.heba-dev.tech.pem
+    http-request add-header X-Forwarded-Proto https
+    default_backend http_back
+
+frontend  yonas-frontend
+        bind *:80
+        mode http
+        http-request redirect scheme https if !{ ssl_fc }
+        default_backend servers
+backend servers
+        balance roundrobin
+        server 63210-web-01 35.175.135.229:80 check
+        server 63210-web-02 54.172.174.81:80 check

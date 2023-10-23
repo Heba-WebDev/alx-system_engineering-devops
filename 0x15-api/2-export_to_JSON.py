@@ -16,10 +16,9 @@ if __name__ == "__main__":
     tasks = requests.get(url + "todos", params={"userId": user_id}).json()
 
     # Saving data as a file
-    with open("{}.json".format(user_id), "w") as file:
-        for task in tasks:
-            json.dump({user_id: [{
-             "task": task.get('title'),
-             "completed": task.get('completed'),
-             "username": user.get('username')
-            }]}, file)
+    with open("{}".format(user_id), "w") as file:
+        json.dump({user_id: [{
+            "task": task.get("title"),
+            "completed": task.get("completed"),
+            "username": user.get("username")
+            } for task in tasks]}, file)
